@@ -2,6 +2,9 @@
 Passo a passo do funcionamento deste pequeno projeto desenvolvido na hands on da Pós Tech de IA para Devs (da FIAP). 
 O projeto consiste na criação, treinamento e utilização de uma rede neural simples usando a biblioteca PyTorch. 
 
+# Objetivo do Projeto
+Criar, treinar e utilizar uma rede neural simples para prever o tempo de conclusão de uma determinada distância, com base em um conjunto de dados fornecido.
+
 # Estrutura do Código
 
 ## Importação das Bibliotecas
