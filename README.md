@@ -8,7 +8,7 @@ Criar, treinar e utilizar uma rede neural simples para prever o tempo de conclus
 # Estrutura do Código
 
 ## Importação das Bibliotecas
-```
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -18,7 +18,7 @@ import torch.optim as optim
 - `torch.optim:` Módulo que fornece algoritmos de otimização para ajustar os parâmetros do modelo.
 
 ## Definição dos Dados
-```
+```python
 X = torch.tensor([[5.0], [10.0], [10.0], [5.0], [10.0],
                   [5.0], [10.0], [10.0], [5.0], [10.0],
                   [5.0], [10.0], [10.0], [5.0], [10.0],
@@ -35,7 +35,7 @@ y = torch.tensor([[30.5], [63.0], [67.0], [29.0], [62.0],
 ## Construção da Rede Neural
 ### Definição da Estrutura
 
-```
+```python
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -56,14 +56,14 @@ class Net(nn.Module):
 
 ## Instanciação do Modelo
 
-```
+```python
 model = Net()
 ```
 - `model:` Instância da rede neural definida pela classe Net.
 
 ## Definição da Função de Perda e Otimizador
 
-```
+```python
 criterion = nn.MSELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 ```
@@ -72,7 +72,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 ## Treinamento da Rede Neural
 
-```
+```python
 for epoch in range(1000):
     optimizer.zero_grad()
     outputs = model(X)
@@ -93,7 +93,7 @@ for epoch in range(1000):
 
 ## Previsão com o Modelo Treinado
 
-```
+```python
 with torch.no_grad():
     predicted = model(torch.tensor([[10.0]], dtype=torch.float32))
     print(f'Previsão de tempo de conclusão: {predicted.item()} minutos')
